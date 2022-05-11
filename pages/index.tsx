@@ -17,11 +17,10 @@ const Home: NextPage = () => {
   }, [video])
   return (
     <div className={styles.container}>
-      <div className={classnames(styles.videoContainer, {
-        [styles.hideVideo]: videoEnded
-      })}>
         <video
-          className={styles.video}
+          className={classnames(styles.video, {
+            [styles.hideVideo]: videoEnded
+          })}
           playsInline
           autoPlay
           muted
@@ -36,7 +35,6 @@ const Home: NextPage = () => {
             type="video/webm"
           />
         </video>
-      </div>
 
       <Head>
         <title>Create Next App</title>
@@ -49,19 +47,6 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
